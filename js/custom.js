@@ -32,6 +32,7 @@ function foo(data) {
   '<param  name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />' +
   '<param  name="flashvars" value="hostname=www.twitch.tv&channel=' + data.streams[0].channel.name + '&auto_play=true&start_volume=50" />' +
 '</object>');
+	//streamContainer.html('<iframe id="player" type="text/html" width="620" height="378" src="http://www.twitch.tv/' + data.streams[0].channel.name + '/hls" frameborder="0"></iframe>');
 	streamContainer.append('<a href="stream.html?channel=' + data.streams[0].channel.name + '">' + data.streams[0].channel.status + '</a></p>');
 	$('.streams').empty();
 	var code = '<div class="row">';
