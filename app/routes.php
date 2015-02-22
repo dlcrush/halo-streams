@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('default');
-});
+Route::get('/', 'StreamController@featured');
+Route::resource('streams', 'StreamController', ['only' => 'index, show']);

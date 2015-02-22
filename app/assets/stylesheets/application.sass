@@ -54,8 +54,35 @@ body
     margin-right: 30px
 
 footer
-    display:block
+    display: block
     background-color: $primary-color
     color: #ccc
-    min-height: 350px
+    padding-bottom: 15px
+
+.embed-container
+    height: 0
+    width: 100%
+    overflow: hidden
+    position: relative
+    padding-bottom: 56.25%
+
+    object
+        height: 100%
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+
+    iframe
+        height: 100%
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+
+.btn
+    @extend .btn-default
+
+.btn:hover
+    @extend .btn-default
 

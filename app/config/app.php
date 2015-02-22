@@ -121,7 +121,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		'Way\Generators\GeneratorsServiceProvider',
+		"dlcrush\DBug\DBugServiceProvider"
 	),
 
 	/*
@@ -161,6 +162,7 @@ return array(
 		'Cookie'            => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'             => 'Illuminate\Support\Facades\Crypt',
 		'DB'                => 'Illuminate\Support\Facades\DB',
+		'DBug'					=> 'dlcrush\DBug\Facades\DBug',
 		'Eloquent'          => 'Illuminate\Database\Eloquent\Model',
 		'Event'             => 'Illuminate\Support\Facades\Event',
 		'File'              => 'Illuminate\Support\Facades\File',
