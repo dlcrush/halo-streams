@@ -1061,7 +1061,7 @@ body {
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
-  background-color: blue; }
+  background-color: #253f3f; }
 
 input,
 button,
@@ -1099,7 +1099,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: blue;
+  background-color: #253f3f;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -2196,7 +2196,7 @@ th {
   .table > tbody + tbody {
     border-top: 2px solid #dddddd; }
   .table .table {
-    background-color: blue; }
+    background-color: #253f3f; }
 
 .table-condensed > thead > tr > th,
 .table-condensed > thead > tr > td,
@@ -3492,7 +3492,7 @@ tbody.collapse.in {
         border-color: #eeeeee #eeeeee #dddddd; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
       color: #555555;
-      background-color: blue;
+      background-color: #253f3f;
       border: 1px solid #dddddd;
       border-bottom-color: transparent;
       cursor: default; }
@@ -3550,7 +3550,7 @@ tbody.collapse.in {
     .nav-tabs.nav-justified > .active > a:hover,
     .nav-tabs-justified > .active > a:focus,
     .nav-tabs.nav-justified > .active > a:focus {
-      border-bottom-color: blue; } }
+      border-bottom-color: #253f3f; } }
 
 .tab-content > .tab-pane {
   display: none;
@@ -4209,7 +4209,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857;
-  background-color: blue;
+  background-color: #253f3f;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -5624,3 +5624,28 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #121f1f;
+  border: 0;
+  border-radius: 0;
+  color: white; }
+  .navbar .navbar-toggle {
+    color: #cccccc; }
+  .navbar .navbar-brand {
+    height: auto; }
+    .navbar .navbar-brand img {
+      width: 175px; }
+  .navbar li {
+    padding-top: 7px; }
+  .navbar li > a {
+    padding: 0 0;
+    margin: 10px 15px 10px;
+    color: #cccccc;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+  .navbar li > a:hover {
+    color: #cccccc;
+    text-decoration: none;
+    background-color: transparent;
+    border-bottom: 4px solid #cccccc; }
