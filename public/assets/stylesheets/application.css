@@ -7423,7 +7423,9 @@ html {
   height: 100%; }
 
 body {
-  height: 100%; }
+  height: 100%;
+  background-color: #3f5353;
+  color: #cccccc; }
 
 .navbar {
   display: block;
@@ -7457,7 +7459,7 @@ body {
     border-bottom: 4px solid #cccccc; }
 
 .main-content {
-  background-color: white;
+  background-color: #3f5353;
   margin-left: 30px;
   margin-right: 30px; }
 
