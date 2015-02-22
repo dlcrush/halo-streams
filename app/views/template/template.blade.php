@@ -20,14 +20,14 @@
     <![endif]-->
   </head>
   <body>
-    @include('partials._navigation')
+    @include('template.partials._navigation')
 
     <div class="container-fluid main-content">
       @yield('content')
     </div>
 
     <footer class="container-fluid">
-      @include('partials._footer')
+      @include('template.partials._footer')
     </footer>
   </body>
 </html>
