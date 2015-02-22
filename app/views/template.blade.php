@@ -20,9 +20,15 @@
     <![endif]-->
   </head>
   <body>
-
     @include('partials._navigation')
 
-    @yield('content')
+    <div class="container-fluid main-content">
+      @yield('content')
+    </div>
+
+    <footer class="container-fluid">
+      <h3>Footer</h3>
+      <p>This is my footer. Here I will put a lot of shit.</p>
+    </footer>
   </body>
 </html>
