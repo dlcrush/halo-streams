@@ -12,8 +12,8 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">All Streams</a></li>
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-list"></i> All Streams</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>

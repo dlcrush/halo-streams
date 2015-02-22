@@ -42,6 +42,14 @@ module.exports = function(grunt) {
         files: ['./app/assets/stylesheets/*.sass'],
         tasks: ['sass']
       }
+    },
+    copy: {
+      files: {
+        cwd: 'bower_components/font-awesome/fonts/',  // set working folder / root to copy
+        src: '**/*',           // copy all files and subfolders
+        dest: 'public/assets/fonts',    // destination folder
+        expand: true           // required when using cwd
+      }
     }
   });
 
@@ -49,6 +57,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('default', ['watch']);
 }
