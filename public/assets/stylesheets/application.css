@@ -7487,3 +7487,12 @@ footer {
     position: absolute;
     top: 0;
     left: 0; }
+
+a {
+  color: white; }
+
+a:hover {
+  color: white; }
+
+a .img-preview:hover {
+  opacity: 0.5; }

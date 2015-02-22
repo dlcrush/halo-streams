@@ -38,10 +38,23 @@ class StreamController extends \BaseController {
 	public function index()
 	{
 		$client = new GuzzleHttp\Client;
-		$streams = $client->get('https://api.twitch.tv/kraken/streams',
+		$offset = 0;
+		$streamsArray = [];
+		do {
+			$streams = $client->get('https://api.twitch.tv/kraken/streams?offset=' . $offset,
 				['query' => ['game' => 'Halo: The Master Chief Collection'], ['embeddable' => 'true']])->json(['object' => true]);
-		$streams = $streams->streams;
-		//DBug::Dbug(array_splice($streams, 1), true);
+			$streamsArray = array_merge($streamsArray, $streams->streams);
+			$offset = count($streamsArray);
+		}
+		while ($offset < $streams->_total );
+
+		$streams = $streamsArray;
+
+		foreach($streams as $stream) {
+			if (! isset($stream->channel->status)) {
+				$stream->channel->status = $stream->channel->display_name;
+			}
+		}
 
 		return View::make('streams.index', compact('streams'));
 	}

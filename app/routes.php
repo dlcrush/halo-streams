@@ -12,7 +12,10 @@
 */
 
 Route::get('/', 'StreamController@featured');
-Route::resource('streams', 'StreamController', ['only' => 'index, show']);
+Route::resource('stream', 'StreamController', ['only' => ['index', 'show']]);
+
+Route::get('contactus', 'ContactController@showForm');
+Route::post('contactus', 'ContactController@send');
 
 Route::get('test', function() {
 	Mail::send('emails.test', [], function($message) {
