@@ -27,8 +27,7 @@
     </div>
 
     <footer class="container-fluid">
-      <h3>Footer</h3>
-      <p>This is my footer. Here I will put a lot of shit.</p>
+      @include('partials._footer')
     </footer>
   </body>
 </html>
