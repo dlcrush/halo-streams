@@ -1,0 +1,6 @@
+{
+  "name": "Halo Streams",
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3"
+  }
+}
