@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       js: {
         src: [
           './bower_components/jquery/dist/jquery.js',
-          './bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js',
+          './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
           './app/assets/javascripts/*.js'
         ],
         dest: './public/assets/javascripts/application.js'
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       js: {
         files: [
           './bower_components/jquery/dist/jquery.js',
-          './bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js',
+          './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
           './app/assets/javascripts/*.js'
         ],
         tasks: ['concat:js', 'uglify:js']

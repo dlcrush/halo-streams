@@ -5639,6 +5639,9 @@ button.close {
       width: 175px; }
   .navbar li {
     padding-top: 7px; }
+  .navbar .navbar-toggle .icon-bar {
+    background-color: #cccccc;
+    color: #cccccc; }
   .navbar li > a {
     padding: 0 0;
     margin: 10px 15px 10px;
