@@ -13,3 +13,11 @@
 
 Route::get('/', 'StreamController@featured');
 Route::resource('streams', 'StreamController', ['only' => 'index, show']);
+
+Route::get('test', function() {
+	Mail::send('emails.test', [], function($message) {
+		$message->to('dlcrush@mail.roanoke.edu');
+		$message->from('noreply@halostreams.com');
+		$message->subject('Test');
+	});
+});
