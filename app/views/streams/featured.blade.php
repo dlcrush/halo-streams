@@ -9,7 +9,7 @@
       <div class="clearfix"></div>
       {{-- For right now, we're going to force it to assume no flash and not show chat --}}
       @if (stripos($_SERVER['HTTP_USER_AGENT'],"iPhone") || stripos($_SERVER['HTTP_USER_AGENT'],"iPad") || stripos($_SERVER['HTTP_USER_AGENT'],"Android") || true)
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
           <p><a href="{{ action('StreamController@show', ['id' => $streams[0]->channel->name]) }}">{{ $streams[0]->channel->status }}</a></p>
           <div class="embed-container">
             @include('streams.partials._player', ['channel' => $streams[0]->channel->name, 'autoplay' => 'true', 'volume' => '50'])
