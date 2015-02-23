@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="description" content="Watch the top Halo players in the world stream live."/>
+    <meta property="og:title" content="Halo Streams"/>
+    <meta property="og:url" content="http://halostreams.com/"/>
+    <meta property="og:image" content="{{ asset('assets/img/halostreams.png') }}"/>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Halo Streams</title>
 
     <!-- Bootstrap -->
-    <link href="/assets/stylesheets/application.css" rel="stylesheet">
+    <link href="{{ asset('assets/stylesheets/application.css') }}" rel="stylesheet">
 
     <!-- Javascript -->
-    <script src="/assets/javascripts/application.js"></script>
+    <script src=" {{ asset('assets/javascripts/application.js') }}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
