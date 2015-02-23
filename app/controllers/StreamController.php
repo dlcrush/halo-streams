@@ -4,10 +4,19 @@ class StreamController extends \BaseController {
 
 	private $client = null;
 
+	/**
+	 * Constructor
+	 */
 	public function __construct() {
 		$this->client = new GuzzleHttp\Client;
 	}
 
+	/**
+	 * Guarantees that every stream's channel will have a status.
+	 *
+	 * @param  mixed $streams the stream or streams to fix
+	 * @return array list of all the streams with values for the status
+	 */
 	public function fixStatus($streams) {
 		if (! is_array($streams)) {
 			$streams = array($streams);
@@ -78,8 +87,6 @@ class StreamController extends \BaseController {
 	public function show($id)
 	{
 		$stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id)->json(['object' => true]);
-
-		//DBug::DBug($stream, true);
 
 		$stream = $this->fixStatus($stream->stream);
 		$stream = $stream[0];
