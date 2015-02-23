@@ -9,7 +9,7 @@
       <div class="clearfix"></div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="embed-container">
-        @include('streams.partials._player', ['channel' => $streams[0]->channel->name, 'autoplay' => 'false', 'volume' => '5'])
+        @include('streams.partials._player', ['channel' => $streams[0]->channel->name, 'autoplay' => 'true', 'volume' => '5'])
       </div>
       <p>
         <i class="fa fa-twitch"></i> <a href="#">{{ $streams[0]->channel->display_name }}</a>
