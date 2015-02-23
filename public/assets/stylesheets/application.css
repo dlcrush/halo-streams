@@ -7457,6 +7457,8 @@ body {
     text-decoration: none;
     background-color: transparent;
     border-bottom: 4px solid #cccccc; }
+  .navbar li > a:focus {
+    background-color: transparent; }
 
 .main-content {
   background-color: #3f5353;

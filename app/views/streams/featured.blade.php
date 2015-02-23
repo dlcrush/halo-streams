@@ -4,7 +4,7 @@
   <h1>Featured Streams</h1>
   <div class="row" style="margin-bottom: 20px;">
       <div class="col-xs-12">
-        <p><a href="#">{{ $streams[0]->channel->status }}</a></p>
+        <p><a href="{{ action('StreamController@show', ['id' => $streams[0]->channel->name]) }}">{{ $streams[0]->channel->status }}</a></p>
       </div>
       <div class="clearfix"></div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">

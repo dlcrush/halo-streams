@@ -2,6 +2,26 @@
 
 class StreamController extends \BaseController {
 
+	private $client = null;
+
+	public function __construct() {
+		$this->client = new GuzzleHttp\Client;
+	}
+
+	public function fixStatus($streams) {
+		if (! is_array($streams)) {
+			$streams = array($streams);
+		}
+
+		foreach($streams as $stream) {
+			if (! isset($stream->channel->status)) {
+				$stream->channel->status = $stream->channel->display_name;
+			}
+		}
+
+		return $streams;
+	}
+
 	/**
 	 * Display a listing of featured resource.
 	 * GET /featured
@@ -10,8 +30,7 @@ class StreamController extends \BaseController {
 	 */
 	public function featured()
 	{
-		$client = new GuzzleHttp\Client;
-		$streams = $client->get('https://api.twitch.tv/kraken/streams?limit=13',
+		$streams = $this->client->get('https://api.twitch.tv/kraken/streams?limit=13',
 				['query' =>
 					['game' => 'Halo: The Master Chief Collection'],
 					['embeddable' => 'true']
@@ -19,12 +38,7 @@ class StreamController extends \BaseController {
 		//DBug::Dbug($streams, true);
 		$streams = $streams->streams;
 
-		foreach($streams as $stream) {
-			if (! isset($stream->channel->status)) {
-				$stream->channel->status = $stream->channel->display_name;
-			}
-		}
-
+		$streams = $this->fixStatus($streams);
 
 		return View::make('streams.featured', compact('streams'));
 	}
@@ -37,11 +51,10 @@ class StreamController extends \BaseController {
 	 */
 	public function index()
 	{
-		$client = new GuzzleHttp\Client;
 		$offset = 0;
 		$streamsArray = [];
 		do {
-			$streams = $client->get('https://api.twitch.tv/kraken/streams?offset=' . $offset,
+			$streams = $this->client->get('https://api.twitch.tv/kraken/streams?offset=' . $offset,
 				['query' => ['game' => 'Halo: The Master Chief Collection'], ['embeddable' => 'true']])->json(['object' => true]);
 			$streamsArray = array_merge($streamsArray, $streams->streams);
 			$offset = count($streamsArray);
@@ -50,11 +63,7 @@ class StreamController extends \BaseController {
 
 		$streams = $streamsArray;
 
-		foreach($streams as $stream) {
-			if (! isset($stream->channel->status)) {
-				$stream->channel->status = $stream->channel->display_name;
-			}
-		}
+		$streams = $this->fixStatus($streams);
 
 		return View::make('streams.index', compact('streams'));
 	}
@@ -68,7 +77,16 @@ class StreamController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id)->json(['object' => true]);
+
+		//DBug::DBug($stream, true);
+
+		$stream = $this->fixStatus($stream->stream);
+		$stream = $stream[0];
+
+		//DBug::DBug($stream, true);
+
+		return View::make('streams.show', compact('stream'));
 	}
 
 }

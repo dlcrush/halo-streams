@@ -4,7 +4,7 @@
   <h1>All Streams</h1>
   <div class="row" style="margin-bottom: 20px">
     <?php $i = 0 ?>
-    @foreach(array_splice($streams, 1) as $stream)
+    @foreach($streams as $stream)
       <?php $i ++; ?>
 
       <div class="col-xs-6 col-sm-6 col-md-4" style="margin-bottom: 10px;">

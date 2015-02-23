@@ -8,7 +8,7 @@
   <div class="col-xs-12 col-md-4">
     <span><h3 style="text-align:center;">About Us</h3></span>
     <div style="text-align:center;">
-      <p>Halo Streams gives viewers a convenient platform to find gaming streams of Halo. Check us out on <a href="https://github.com/dlcrush/Halo-Streams">Github</a>.</p>
+      <p>Halo Streams gives viewers a convenient platform to find gaming streams of Halo. Check us out on <a href="https://github.com/dlcrush/Halo-Streams"><i class="fa fa-github"></i> Github</a>.</p>
     </div>
   </div>
   <div class = "col-xs-12 col-md-4">
