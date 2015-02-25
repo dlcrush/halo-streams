@@ -7,8 +7,8 @@ class StreamController extends \BaseController {
 	/**
 	 * Constructor
 	 */
-	public function __construct() {
-		$this->client = new GuzzleHttp\Client;
+	public function __construct(GuzzleHttp\Client $client) {
+		$this->client = $client;
 	}
 
 	/**
