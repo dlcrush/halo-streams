@@ -14,9 +14,9 @@
   <div class = "col-xs-12 col-md-4">
     <h3 style="text-align:center;">Sitemap</h3>
     <div style="text-align:center">
-      <p><a href="#">Home</a></p>
-      <p><a href="#">All Streams</a></p>
-      <p><a href="#">Contact Us</a></p>
+      <p><a href="{{ action('StreamController@featured') }}">Home</a></p>
+      <p><a href="{{ action('StreamController@index') }}">All Streams</a></p>
+      <p><a href="{{ action('ContactController@showForm') }}">Contact Us</a></p>
     </div>
   </div>
   <div class="clearfix">
