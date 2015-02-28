@@ -60,21 +60,17 @@ class StreamController extends \BaseController {
 	 */
 	public function index()
 	{
-		$offset = 0;
-		$streamsArray = [];
-		do {
-			$streams = $this->client->get('https://api.twitch.tv/kraken/streams?offset=' . $offset,
+		$offset = Input::get('offset', 0);
+		$limit = Input::get('limit', 18);
+
+		$streams = $this->client->get('https://api.twitch.tv/kraken/streams?limit=' . $limit . '&offset=' . $offset,
 				['query' => ['game' => 'Halo: The Master Chief Collection'], ['embeddable' => 'true']])->json(['object' => true]);
-			$streamsArray = array_merge($streamsArray, $streams->streams);
-			$offset = count($streamsArray);
-		}
-		while ($offset < $streams->_total );
 
-		$streams = $streamsArray;
+		$total = $streams->_total;
 
-		$streams = $this->fixStatus($streams);
+		$streams = $this->fixStatus($streams->streams);
 
-		return View::make('streams.index', compact('streams'));
+		return View::make('streams.index', compact('streams', 'offset', 'limit', 'total'));
 	}
 
 	/**

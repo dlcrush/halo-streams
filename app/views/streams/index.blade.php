@@ -17,5 +17,12 @@
         <div class="clearfix visible-xs visible-sm"></div>
       @endif
     @endforeach
+
+    <div class="clearfix"></div>
+    <div class="col-xs-12">
+      <div class="text-center">
+        @include('streams.partials._pagination', compact('offset', 'limit', 'streams'))
+      </div>
+    </div>
   </div>
 @endsection
