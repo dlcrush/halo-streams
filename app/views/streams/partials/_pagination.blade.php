@@ -5,7 +5,7 @@
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    @for($i = 0; $i < $total + $limit; $i += $limit)
+    @for($i = 0; $i < $total; $i += $limit)
       <li><a href="{{ action('StreamController@index', ['limit' => $limit, 'offset' => $i]) }}">{{ (($i/$limit) + 1) }}</a></li>
     @endfor
     {{-- <li><a href="#">1</a></li>
