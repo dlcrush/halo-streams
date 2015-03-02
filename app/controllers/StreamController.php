@@ -1,6 +1,6 @@
 <?php
 
-use HaloStreams\Repo\GuzzleStreamRepository;
+use HaloStreams\Repo\StreamRepositoryInterface;
 
 class StreamController extends \BaseController {
 
