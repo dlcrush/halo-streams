@@ -9,7 +9,7 @@
       </div> --}}
       <div class="clearfix"></div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-        <h3>{{ $stream->channel->status }}</h3>
+        <h3>{{ (isset($stream->channel->status)) ?  $stream->channel->status : $stream->channel->display_name }}</h3>
         {{-- <p><a href="#">{{ $stream->channel->status }}</a></p> --}}
         <div class="embed-container">
           @include('streams.partials._player', ['channel' => $stream->channel->name, 'autoplay' => 'true', 'volume' => '50'])

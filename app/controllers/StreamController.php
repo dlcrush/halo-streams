@@ -1,14 +1,16 @@
 <?php
 
+use HaloStreams\Repo\GuzzleStreamRepository;
+
 class StreamController extends \BaseController {
 
-	private $client = null;
+	private $streams = null;
 
 	/**
 	 * Constructor
 	 */
-	public function __construct(GuzzleHttp\Client $client) {
-		$this->client = $client;
+	public function __construct(GuzzleStreamRepository $streams) {
+		$this->streams = $streams;
 	}
 
 	/**
@@ -39,13 +41,7 @@ class StreamController extends \BaseController {
 	 */
 	public function featured()
 	{
-		$streams = $this->client->get('https://api.twitch.tv/kraken/streams?limit=13',
-				['query' =>
-					['game' => 'Halo: The Master Chief Collection'],
-					['embeddable' => 'true']
-				])->json(['object' => true]);
-		//DBug::Dbug($streams, true);
-		$streams = $streams->streams;
+		$streams = $this->streams->getAllStreams(13)->streams;
 
 		$streams = $this->fixStatus($streams);
 
@@ -63,8 +59,7 @@ class StreamController extends \BaseController {
 		$offset = Input::get('offset', 0);
 		$limit = Input::get('limit', 18);
 
-		$streams = $this->client->get('https://api.twitch.tv/kraken/streams?limit=' . $limit . '&offset=' . $offset,
-				['query' => ['game' => 'Halo: The Master Chief Collection'], ['embeddable' => 'true']])->json(['object' => true]);
+		$streams = $this->streams->getStreams($limit, $offset);
 
 		$total = $streams->_total;
 
@@ -82,12 +77,10 @@ class StreamController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id)->json(['object' => true]);
+		$stream = $this->streams->getStream($id);
 
 		$stream = $this->fixStatus($stream->stream);
 		$stream = $stream[0];
-
-		//DBug::DBug($stream, true);
 
 		return View::make('streams.show', compact('stream'));
 	}

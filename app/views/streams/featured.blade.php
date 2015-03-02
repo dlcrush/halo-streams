@@ -8,7 +8,7 @@
       </div> --}}
       <div class="clearfix"></div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
-        <p><a href="{{ action('StreamController@show', ['id' => $streams[0]->channel->name]) }}">{{ $streams[0]->channel->status }}</a></p>
+        <p><a href="{{ action('StreamController@show', ['id' => $streams[0]->channel->name]) }}">{{ (isset($streams[0]->channel->status)) ?  $streams[0]->channel->status : $streams[0]->channel->display_name }}</a></p>
         <div class="embed-container">
           @include('streams.partials._player', ['channel' => $streams[0]->channel->name, 'autoplay' => 'true', 'volume' => '50'])
         </div>

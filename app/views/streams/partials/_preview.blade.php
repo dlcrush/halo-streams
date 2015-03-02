@@ -1,4 +1,4 @@
-<p><a href="{{ action('StreamController@show', ['id' => $stream->channel->name]) }}">{{ $stream->channel->status }}</a></p>
+<p><a href="{{ action('StreamController@show', ['id' => $stream->channel->name]) }}">{{ isset($stream->channel->status) ? $stream->channel->status : $stream->channel->display_name }}</a></p>
 <a href="{{ action('StreamController@show', ['id' => $stream->channel->name]) }}"><img class="img-responsive img-preview" src="{{ $stream->preview->large }}"></a>
 <p>
   <i class="fa fa-twitch">{{ $stream->channel->display_name }}</i>
