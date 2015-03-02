@@ -1,5 +1,5 @@
 <nav>
-  <ul class="pagination">
+  <ul class="pagination pagination-lg">
     <li>
       <a href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>

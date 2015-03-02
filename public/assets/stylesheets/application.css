@@ -7498,3 +7498,13 @@ a:hover {
 
 a .img-preview:hover {
   opacity: 0.5; }
+
+.pagination > li > a, .pagination > li > span {
+  background-color: #121f1f;
+  color: #cccccc;
+  border-color: #cccccc; }
+
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+  color: black;
+  background-color: #cccccc;
+  border-color: #cccccc; }

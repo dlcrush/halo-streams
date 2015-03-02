@@ -37,7 +37,7 @@
 
   <div class="row" style="margin-bottom: 20px">
     <div class="col-xs-12">
-      <a href="{{ action('StreamController@index') }}" class="btn btn-block"><i class="fa fa-list"></i> View All Streams</a>
+      <a href="{{ action('StreamController@index') }}" class="btn btn-block btn-lg"><i class="fa fa-list"></i> View All Streams</a>
     </div>
   </div>
 @endsection
