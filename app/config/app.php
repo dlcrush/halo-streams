@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		"dlcrush\DBug\DBugServiceProvider"
+		"dlcrush\DBug\DBugServiceProvider",
+		"HaloStreams\Repo\RepoServiceProvider"
 	),
 
 	/*
