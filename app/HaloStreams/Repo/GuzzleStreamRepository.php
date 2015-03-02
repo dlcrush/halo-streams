@@ -30,7 +30,7 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
 	/**
 	 * Gets a random stream
 	 *
-	 * @return [type] [description]
+	 * @return stdClass
 	 */
 	public function getRandomStream() {
 		// @TODO Get random stream

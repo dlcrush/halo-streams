@@ -3,29 +3,33 @@
 interface StreamRepositoryInterface {
 
 	/**
-	 * [getAllStreams description]
-	 * @return [type] [description]
+	 * Gets all streams
+	 *
+	 * @return stdClass
 	 */
 	public function getAllStreams($limit=null);
 
 	/**
-	 * [getRandomStream description]
-	 * @return [type] [description]
+	 * Gets a random stream
+	 *
+	 * @return stdClass
 	 */
 	public function getRandomStream();
 
 	/**
 	 * Gets streams
-	 * @param  integer $limit  [description]
-	 * @param  integer $offset [description]
-	 * @return [type]          [description]
+	 *
+	 * @param  integer $limit
+	 * @param  integer $offset
+	 * @return stdClass
 	 */
 	public function getStreams($limit=18,$offset=0);
 
 	/**
-	 * [getStream description]
-	 * @param  [type] $id [description]
-	 * @return [type]     [description]
+	 * Gets a stream
+	 *
+	 * @param  int $id
+	 * @return stdClass
 	 */
 	public function getStream(int $id);
 
