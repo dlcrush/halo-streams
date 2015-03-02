@@ -50,10 +50,10 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
 
 	/**
 	 *  Get stream
-	 * @param  int    $id
+	 * @param  mixed    $id
 	 * @return  stdClass
 	 */
-	public function getStream(int $id) {
+	public function getStream($id) {
 		return $stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id)->json(['object' => true]);
 	}
 

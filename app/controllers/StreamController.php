@@ -64,8 +64,6 @@ class StreamController extends \BaseController {
 	{
 		$stream = $this->streams->getStream($id)->stream;
 
-		$stream = $stream[0];
-
 		return View::make('streams.show', compact('stream'));
 	}
 

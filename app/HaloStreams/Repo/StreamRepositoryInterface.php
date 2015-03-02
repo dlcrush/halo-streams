@@ -28,9 +28,9 @@ interface StreamRepositoryInterface {
 	/**
 	 * Gets a stream
 	 *
-	 * @param  int $id
+	 * @param  mixed $id
 	 * @return stdClass
 	 */
-	public function getStream(int $id);
+	public function getStream($id);
 
 }
