@@ -6,7 +6,7 @@ interface StreamRepositoryInterface {
 	 * [getAllStreams description]
 	 * @return [type] [description]
 	 */
-	public function getAllStreams();
+	public function getAllStreams($limit=null);
 
 	/**
 	 * [getRandomStream description]
@@ -27,6 +27,6 @@ interface StreamRepositoryInterface {
 	 * @param  [type] $id [description]
 	 * @return [type]     [description]
 	 */
-	public function getStream($id);
+	public function getStream(int $id);
 
 }
