@@ -30,8 +30,6 @@ class StreamController extends \BaseController {
 	{
 		$streams = $this->streams->getAllStreams(13)->streams;
 
-		$streams = $this->fixStatus($streams);
-
 		return View::make('streams.featured', compact('streams'));
 	}
 
@@ -50,7 +48,7 @@ class StreamController extends \BaseController {
 
 		$total = $streams->_total;
 
-		$streams = $this->fixStatus($streams->streams);
+		$streams = $streams->streams;
 
 		return View::make('streams.index', compact('streams', 'offset', 'limit', 'total'));
 	}
@@ -64,9 +62,8 @@ class StreamController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$stream = $this->streams->getStream($id);
+		$stream = $this->streams->getStream($id)->stream;
 
-		$stream = $this->fixStatus($stream->stream);
 		$stream = $stream[0];
 
 		return View::make('streams.show', compact('stream'));
