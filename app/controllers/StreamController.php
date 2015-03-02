@@ -4,33 +4,20 @@ use HaloStreams\Repo\GuzzleStreamRepository;
 
 class StreamController extends \BaseController {
 
-	private $streams = null;
+	/**
+	 * Streams repo
+	 *
+	 * @var StreamRepositoryInterface
+	 */
+	protected $streams = null;
 
 	/**
 	 * Constructor
-	 */
-	public function __construct(GuzzleStreamRepository $streams) {
-		$this->streams = $streams;
-	}
-
-	/**
-	 * Guarantees that every stream's channel will have a status.
 	 *
-	 * @param  mixed $streams the stream or streams to fix
-	 * @return array list of all the streams with values for the status
+	 * @param StreamRepositoryInterface $streams
 	 */
-	public function fixStatus($streams) {
-		if (! is_array($streams)) {
-			$streams = array($streams);
-		}
-
-		foreach($streams as $stream) {
-			if (! isset($stream->channel->status)) {
-				$stream->channel->status = $stream->channel->display_name;
-			}
-		}
-
-		return $streams;
+	public function __construct(StreamRepositoryInterface $streams) {
+		$this->streams = $streams;
 	}
 
 	/**
