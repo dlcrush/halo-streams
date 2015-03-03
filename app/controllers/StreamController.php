@@ -44,11 +44,9 @@ class StreamController extends \BaseController {
 		$offset = Input::get('offset', 0);
 		$limit = Input::get('limit', 18);
 
-		$streams = $this->streams->getStreams($limit, $offset);
+		$streams = $this->streams->getStreams($limit, $offset)->streams;
 
-		$total = $streams->_total;
-
-		$streams = $streams->streams;
+		$total = $this->streams->getAllStreams()->_total;
 
 		return View::make('streams.index', compact('streams', 'offset', 'limit', 'total'));
 	}

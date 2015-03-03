@@ -7508,3 +7508,8 @@ a .img-preview:hover {
   color: black;
   background-color: #cccccc;
   border-color: #cccccc; }
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  color: black;
+  background-color: #cccccc;
+  border-color: #cccccc; }
