@@ -1,7 +1,3 @@
-{{ DBug::DBug($offset) }}
-{{ DBug::DBug($limit) }}
-{{ DBug::DBug($total) }}
-{{ DBug::DBug((($offset + $limit) < $total)) }}
 <nav>
   <ul class="pagination pagination-lg">
     <li class="{{ ($offset == 0) ? 'disabled' : '' }}">
