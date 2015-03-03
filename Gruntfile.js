@@ -24,6 +24,9 @@ module.exports = function(grunt) {
     },
     sass: {
       development: {
+        options: {
+          style: 'compressed'
+        },
         files: {
           "./public/assets/stylesheets/application.css":"./app/assets/stylesheets/application.sass"
         }
