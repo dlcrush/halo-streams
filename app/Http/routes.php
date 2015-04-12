@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'StreamController@featured');
+Route::resource('streams', 'StreamController', ['only' => ['index', 'show']]);
 
-Route::get('home', 'HomeController@index');
+Route::get('contactus', 'ContactController@showForm');
+Route::post('contactus', 'ContactController@send');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
