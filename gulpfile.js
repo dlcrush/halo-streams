@@ -13,7 +13,8 @@ elixir.config.sourcemaps = false; // I dont' think Sass will compile without thi
 var paths = {
     'jquery': 'vendor/jquery/dist',
     'bootstrap': 'vendor/bootstrap-sass/assets',
-    'fontawesome': 'vendor/font-awesome'
+    'fontawesome': 'vendor/font-awesome',
+    'jqueryLazy': 'vendor/jquery-lazy'
 };
 
 
@@ -49,6 +50,7 @@ elixir(function(mix) {
   mix.scripts([
     paths.jquery + '/jquery.js',
     paths.bootstrap + '/javascripts/bootstrap.js',
+    paths.jqueryLazy + '/jquery.lazy.js',
     'assets/js/application.js'
   ], 'public/js/all.js', 'resources/');
 

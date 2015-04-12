@@ -1,4 +1,10 @@
 $(function() {
+
+  // Lazy loading
+  $('img.lazy').Lazy({
+    effect: "fadeIn"
+  });
+
   $('#contact-form').on('submit', function(e) {
     e.preventDefault();
 
