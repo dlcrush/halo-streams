@@ -1,9 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use Validator, Redirect, Request, Mail, Input;
+
 class ContactController extends Controller {
 
 	public function showForm() {
-		return View::make('contact');
+		return view('contact');
 	}
 
 	public function send() {
