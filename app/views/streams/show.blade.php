@@ -2,7 +2,7 @@
 
 @section('content')
   {{-- <h3>{{ $stream->channel->status }}</h3> --}}
-
+  @include('streams.partials._ads')
   <div class="row" style="margin-bottom: 20px;">
       {{-- <div class="col-xs-12">
         <p><a href="#">{{ $stream->channel->status }}</a></p>

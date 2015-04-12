@@ -1,6 +1,7 @@
 @extends('template/template')
 
 @section('content')
+  @include('streams.partials._ads')
   <h1>All Streams</h1>
   <div class="row" style="margin-bottom: 20px">
     <?php $i = 0 ?>

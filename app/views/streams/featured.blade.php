@@ -1,6 +1,7 @@
 @extends('template/template')
 
 @section('content')
+  @include('streams.partials._ads')
   <h1>Featured Streams</h1>
   <div class="row" style="margin-bottom: 20px;">
       {{-- <div class="col-xs-12">
