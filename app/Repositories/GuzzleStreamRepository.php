@@ -35,9 +35,9 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
      * @return stdClass
      */
     public function getRandomStream() {
-			$streams = $this->getAllStreams(100);
+		$streams = $this->getAllStreams(100);
 
-			return $streams->streams[rand(0, count($streams->streams) - 1)];
+		return $streams->streams[rand(0, count($streams->streams) - 1)];
     }
 
     /**
