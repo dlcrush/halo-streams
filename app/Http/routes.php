@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'StreamController@featured');
-Route::resource('streams', 'StreamController', ['only' => ['index', 'show']]);
+Route::get('streams/random', 'StreamController@random');
+Route::get('streams/{id}', 'StreamController@show');
+Route::get('streams', 'StreamController@index');
 
 Route::get('contactus', 'ContactController@showForm');
 Route::post('contactus', 'ContactController@send');

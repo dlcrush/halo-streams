@@ -14,6 +14,7 @@
       <ul class="nav navbar-nav">
         <li><a href="{{ action('StreamController@featured') }}"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="{{ action('StreamController@index') }}"><i class="fa fa-list"></i> All Streams</a></li>
+        <li><a href="{{ action('StreamController@random') }}"><i class="fa fa-random"></i> Random Stream</a></li>
         <li><a href="/contactus"><i class="fa fa-envelope"></i> Contact Us</a></li>
       </ul>
     </div>

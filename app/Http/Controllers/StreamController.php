@@ -18,7 +18,7 @@ class StreamController extends Controller {
      * @param StreamRepositoryInterface $streams
      */
     public function __construct(StreamRepositoryInterface $streams) {
-        $this->streams = $streams;
+    	$this->streams = $streams;
     }
 
     /**
@@ -29,9 +29,9 @@ class StreamController extends Controller {
      */
     public function featured()
     {
-        $streams = $this->streams->getAllStreams(13)->streams;
+    	$streams = $this->streams->getAllStreams(13)->streams;
 
-        return view('streams.featured', compact('streams'));
+    	return view('streams.featured', compact('streams'));
     }
 
     /**
@@ -42,14 +42,14 @@ class StreamController extends Controller {
      */
     public function index()
     {
-        $offset = Input::get('offset', 0);
-        $limit = Input::get('limit', 18);
+    	$offset = Input::get('offset', 0);
+    	$limit = Input::get('limit', 18);
 
-        $streams = $this->streams->getStreams($limit, $offset)->streams;
+    	$streams = $this->streams->getStreams($limit, $offset)->streams;
 
-        $total = $this->streams->getAllStreams()->_total;
+    	$total = $this->streams->getAllStreams()->_total;
 
-        return view('streams.index', compact('streams', 'offset', 'limit', 'total'));
+    	return view('streams.index', compact('streams', 'offset', 'limit', 'total'));
     }
 
     /**
@@ -61,9 +61,16 @@ class StreamController extends Controller {
      */
     public function show($id)
     {
-        $stream = $this->streams->getStream($id)->stream;
+    	$stream = $this->streams->getStream($id)->stream;
 
-        return view('streams.show', compact('stream'));
+    	return view('streams.show', compact('stream'));
     }
 
-}
+    public function random()
+    {
+    	$stream = $this->streams->getRandomStream();
+
+    	return view('streams.show', compact('stream'));
+    }
+
+   }
