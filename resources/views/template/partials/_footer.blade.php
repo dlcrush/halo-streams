@@ -28,5 +28,5 @@
     <p style="text-align: center">&copy; Halo Streams 2014 - {{ date('Y') }}</p>
   </div>
 </div>
-
-<p style="text-align: center;"><script type="text/javascript" src="http://srvpub.com/adServe/banners?tid=30756_44044_4&type=footer&size=728x90" ></script></p>
+{{--
+<p style="text-align: center;"><script type="text/javascript" src="http://srvpub.com/adServe/banners?tid=30756_44044_4&type=footer&size=728x90" ></script></p> --}}
