@@ -1,7 +1,7 @@
 <?php namespace App\Repositories;
 
 use App\Repositories\Contracts\StreamRepositoryInterface;
-use Cache, Carbon;
+use Cache, Carbon\Carbon;
 class GuzzleStreamRepository implements StreamRepositoryInterface {
 
     /**
