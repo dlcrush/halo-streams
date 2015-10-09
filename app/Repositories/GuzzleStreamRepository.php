@@ -49,7 +49,7 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
      */
     public function getStreams($limit=null,$offset=0) {
     				if (Cache::has('allstreams'.$limit.$offset)) {
-    			         return Cache::get('allstreams');
+    			         return Cache::get('allstreams'.$limit.$offset);
     				}
     				
     				$expiresAt = Carbon::now()->addMinutes(5);
