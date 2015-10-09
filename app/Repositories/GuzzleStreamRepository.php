@@ -1,7 +1,7 @@
 <?php namespace App\Repositories;
 
 use App\Repositories\Contracts\StreamRepositoryInterface;
-
+use Cache, Carbon\Carbon;
 class GuzzleStreamRepository implements StreamRepositoryInterface {
 
     /**
@@ -48,8 +48,16 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
      * @return   stdClass
      */
     public function getStreams($limit=null,$offset=0) {
-        return $this->client->get('https://api.twitch.tv/kraken/streams?limit=' . $limit . '&offset=' . $offset,
+    				if (Cache::has('allstreams'.$limit.$offset)) {
+    			         return Cache::get('allstreams'.$limit.$offset);
+    				}
+    				
+    				$expiresAt = Carbon::now()->addMinutes(5);
+    				$allstreams = $this->client->get('https://api.twitch.tv/kraken/streams?limit=' . $limit . '&offset=' . $offset,
                 ['query' => ['game' => 'Halo: The Master Chief Collection'], ['embeddable' => 'true']])->json(['object' => true]);
+        Cache::put('allstreams'.$limit.$offset, $allstreams, $expiresAt);
+        
+        return $allstreams;
     }
 
     /**
@@ -58,7 +66,15 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
      * @return  stdClass
      */
     public function getStream($id) {
-        return $stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id)->json(['object' => true]);
+    				if (Cache::has($id)) {
+    												return Cache::get($id);
+    				}
+    				
+    				$expiresAt = Carbon::now()->addMinutes(1);
+        $stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id)->json(['object' => true]);
+        Cache::put($id, $stream, $expiresAt);
+        
+        return $stream;
     }
 
 }
