@@ -29,7 +29,7 @@ class StreamController extends Controller {
      */
     public function featured()
     {
-    	return json($this->streams->getAllStreams(13));
+    	return response()->json($this->streams->getAllStreams(13));
     	
     	$streams = $this->streams->getAllStreams(13)->streams;
 
