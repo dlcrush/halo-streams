@@ -29,8 +29,6 @@ class StreamController extends Controller {
      */
     public function featured()
     {
-    	return response()->json($this->streams->getAllStreams(13));
-    	
     	$streams = $this->streams->getAllStreams(13)->streams;
 
     	return view('streams.featured', compact('streams'));
