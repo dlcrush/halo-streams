@@ -15,7 +15,7 @@
           @include('streams.partials._player', ['channel' => $stream->channel->name, 'autoplay' => 'true', 'volume' => '50'])
         </div>
       <p>
-        <i class="fa fa-twitch"></i> <a href="http://twitch.tv/{{ $stream->channel->display_name }}">{{ $stream->channel->display_name }}</a>
+        <i class="fa fa-twitch"></i> <a href="http://twitch.tv/{{ $stream->channel->display_name }}" target="_blank">{{ $stream->channel->display_name }}</a>
         <span class="pull-right"><i class="fa fa-eye"></i> {{ $stream->viewers }}</span>
       </p>
     </div>
