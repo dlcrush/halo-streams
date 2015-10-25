@@ -54,7 +54,7 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
     				
     				$expiresAt = Carbon::now()->addMinutes(5);
     				$allstreams = $this->client->get('https://api.twitch.tv/kraken/streams?limit=' . $limit . '&offset=' . $offset,
-                ['query' => ['game' => 'Halo: The Master Chief Collection'], ['embeddable' => 'true']])->json(['object' => true]);
+                ['query' => ['game' => 'Halo 5: Guardians'], ['embeddable' => 'true']])->json(['object' => true]);
         Cache::put('allstreams'.$limit.$offset, $allstreams, $expiresAt);
         
         return $allstreams;
