@@ -78,7 +78,7 @@ class GuzzleStreamRepository implements StreamRepositoryInterface {
 					}
 
 					$expiresAt = Carbon::now()->addMinutes(1);
-		$stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id, ['headers' => 'Client-ID' => $this->clientID]])->json(['object' => true]);
+		$stream = $this->client->get('https://api.twitch.tv/kraken/streams/' . $id, ['headers' => ['Client-ID' => $this->clientID]])->json(['object' => true]);
 		Cache::put($id, $stream, $expiresAt);
 
 		return $stream;
