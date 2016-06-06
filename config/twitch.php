@@ -1,7 +1,7 @@
 <?php
 
 	return [
-		'clientID' => env('CLIENTID');
+		'clientID' => env('CLIENTID')
 	];
 
 ?>
